@@ -1,3 +1,61 @@
+Spring Application Advisor CLI Version: 1.3.1
+java.lang.IllegalArgumentException: URI with undefined scheme
+	at java.net.http@23.0.2/jdk.internal.net.http.common.Utils.newIAE(Utils.java:378)
+	at java.net.http@23.0.2/jdk.internal.net.http.HttpRequestBuilderImpl.checkURI(HttpRequestBuilderImpl.java:79)
+	at java.net.http@23.0.2/jdk.internal.net.http.HttpRequestBuilderImpl.uri(HttpRequestBuilderImpl.java:71)
+	at java.net.http@23.0.2/jdk.internal.net.http.HttpRequestBuilderImpl.uri(HttpRequestBuilderImpl.java:43)
+	at org.springframework.http.client.JdkClientHttpRequest.buildRequest(JdkClientHttpRequest.java:142)
+	at org.springframework.http.client.JdkClientHttpRequest.executeInternal(JdkClientHttpRequest.java:101)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at com.vmware.tanzu.spring.advisor.cli.platform.GZipInterceptor.intercept(GZipInterceptor.java:24)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:576)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:533)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:680)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:814)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:774)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:763)
+	at com.vmware.tanzu.spring.advisor.cli.platform.TanzuPlatformPublishService.publish(TanzuPlatformPublishService.java:70)
+	at com.vmware.tanzu.spring.advisor.cli.buildconfig.BuildConfigurationPublishCommand.runCommand(BuildConfigurationPublishCommand.java:82)
+	at com.vmware.tanzu.spring.advisor.cli.Command.run(Command.java:12)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at com.vmware.tanzu.spring.advisor.cli.CommandLineApplicationRunner.run(CommandLineApplicationRunner.java:27)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:789)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:788)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:773)
+	at java.base@23.0.2/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base@23.0.2/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base@23.0.2/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:571)
+	at java.base@23.0.2/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base@23.0.2/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base@23.0.2/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base@23.0.2/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base@23.0.2/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:773)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351)
+	at com.vmware.tanzu.spring.advisor.cli.CommandLineApplication.main(CommandLineApplication.java:15)
+	at java.base@23.0.2/java.lang.invoke.LambdaForm$DMH/sa346b79c.invokeStaticInit(LambdaForm$DMH)
+
+
+^========= [ build-config.json ] =========
 {
   "sbom": {
   "bomFormat" : "CycloneDX",
@@ -6348,3 +6406,6 @@
   ],
   "submodules": ["org.springframework.samples:spring-petclinic"]
 }
+$========= [ build-config.json ] =========
+
+
