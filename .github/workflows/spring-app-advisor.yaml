@@ -1,8 +1,7 @@
 name: spring-app-advisor-workflow
 on:
   push:
-    branches:
-      - 'main'
+    branches: [main]
 
 jobs:
   app_advisor_job:
@@ -10,12 +9,10 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-
-    name: Upgrade Spring Application Dependencies
+      
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v4  
       - name: Run Spring Application Advisor
         uses: eknathreddy09/spring-appadvisor-action@v1.5.4
         env: 
