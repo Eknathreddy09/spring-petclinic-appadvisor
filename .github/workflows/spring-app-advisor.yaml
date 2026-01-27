@@ -14,7 +14,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4  
       - name: Run Spring Application Advisor
-        uses: eknathreddy09/spring-appadvisor-action@v1.5.4
+        uses: eknathreddy09/spring-appadvisor-action@v1.5.5
         env: 
           GH_TOKEN: ${{ secrets.PR_CREATOR_TOKEN }}
         with:
