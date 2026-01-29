@@ -17,5 +17,5 @@ jobs:
         uses: eknathreddy09/spring-appadvisor-action@v1.6.0
         with:
           artifactory_token: ${{ secrets.ArtifactoryToken }}
-          git_token: ${{ secrets.GITHUB_TOKEN }}
+          git_token: ${{ secrets.GH_PAT }}
           advisor_version: '1.5.4' 
