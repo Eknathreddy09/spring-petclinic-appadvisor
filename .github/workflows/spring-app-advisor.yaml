@@ -18,4 +18,4 @@ jobs:
         with:
           artifactory_token: ${{ secrets.ArtifactoryToken }}
           git_token: ${{ secrets.GH_PAT }}
-          advisor_version: '1.5.4' 
+          advisor_version: '1.6.5'
